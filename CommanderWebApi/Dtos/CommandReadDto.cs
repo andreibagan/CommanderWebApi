@@ -1,13 +1,9 @@
-﻿namespace CommanderWebApi.Dtos
+﻿namespace CommanderWebApi.Dtos;
+
+public record CommandReadDto(int Id, string HowTo, string Line, string Platform)
 {
-    public class CommandReadDto
-    {
-        public int Id { get; set; }
-
-        public string HowTo { get; set; }
-
-        public string Line { get; set; }
-
-        public string Platform { get; set; }
-    }
+    public int Id { get; init; } = Id;
+    public string HowTo { get; init; } = HowTo;
+    public string Line { get; init; } = Line;
+    public string Platform { get; init; } = Platform;
 }

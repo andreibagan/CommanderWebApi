@@ -1,17 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace CommanderWebApi.Dtos;
 
-namespace CommanderWebApi.Dtos
+public class CommandUpdateDto
 {
-    public class CommandUpdateDto
-    {
-        [Required]
-        [MaxLength(250)]
-        public string HowTo { get; set; }
+    [Required]
+    [MaxLength(250)]
+    public string HowTo { get; init; }
 
-        [Required]
-        public string Line { get; set; }
+    [Required]
+    public string Line { get; init; }
 
-        [Required]
-        public string Platform { get; set; }
-    }
+    public string Platform { get; init; }
 }

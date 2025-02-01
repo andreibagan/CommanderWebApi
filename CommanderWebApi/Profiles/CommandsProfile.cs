@@ -1,17 +1,12 @@
-﻿using AutoMapper;
-using CommanderWebApi.Dtos;
-using CommanderWebApi.Models;
+﻿namespace CommanderWebApi.Profiles;
 
-namespace CommanderWebApi.Profiles
+file class CommandsProfile : Profile
 {
-    public class CommandsProfile : Profile
+    public CommandsProfile()
     {
-        public CommandsProfile()
-        {
-            CreateMap<Command, CommandReadDto>();
-            CreateMap<CommandCreateDto, Command>();
-            CreateMap<CommandUpdateDto, Command>();
-            CreateMap<Command, CommandUpdateDto>();
-        }
+        CreateMap<Command, CommandReadDto>();
+        CreateMap<CommandCreateDto, Command>();
+        CreateMap<CommandUpdateDto, Command>();
+        CreateMap<Command, CommandUpdateDto>();
     }
 }

@@ -1,20 +1,27 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace CommanderWebApi.Models;
 
-namespace CommanderWebApi.Models
+public class Command
 {
-    public class Command
+    [Key]
+    public int Id { get; init; }
+
+    [Required]
+    [MaxLength(250)]
+    public string HowTo { get; init; }
+
+    [Required]
+    public required string Line { get; init; }
+
+    public required string Platform { get; init; }
+
+    public static bool IsWindowsPlatform(Command command)
     {
-        [Key]
-        public int Id { get; set; }
-
-        [Required]
-        [MaxLength(250)]
-        public string HowTo { get; set; }
-
-        [Required]
-        public string Line { get; set; }
-
-        [Required]
-        public string Platform { get; set; }
+        return command switch
+        {
+            {
+                Platform: "Windows"
+            } => true,
+            _ => false
+        };
     }
 }

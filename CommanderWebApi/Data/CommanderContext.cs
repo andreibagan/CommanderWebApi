@@ -1,15 +1,13 @@
-﻿using CommanderWebApi.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace CommanderWebApi.Data
+namespace CommanderWebApi.Data;
+
+public class CommanderContext : DbContext
 {
-    public class CommanderContext : DbContext
+    public DbSet<Command> Commands { get; set; }
+
+    public CommanderContext(DbContextOptions<CommanderContext> options) : base(options)
     {
-        public DbSet<Command> Commands { get; set; }
 
-        public CommanderContext(DbContextOptions<CommanderContext> options) : base(options)
-        {
-
-        }
     }
 }
